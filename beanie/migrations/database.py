@@ -4,7 +4,7 @@ import motor.motor_asyncio
 class DBHandler:
     @classmethod
     def set_db(cls, uri, db_name):
-        cls.client = motor.motor_asyncio.AsyncIOMotorClient(uri)
+        cls.client = motor.motor_asyncio.AsyncIOMotorClient(uri, tz_aware=True)
         cls.database = cls.client[db_name]
 
     @classmethod
